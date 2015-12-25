@@ -1,7 +1,5 @@
-'use strict'
-
-let milkcocoa = new MilkCocoa('dogi9jz8c16.mlkcca.com');
-let ds = milkcocoa.dataStore("dots");
+var milkcocoa = new MilkCocoa('dogi9jz8c16.mlkcca.com');
+var ds = milkcocoa.dataStore("dots");
 
 document.querySelector('#connect').addEventListener('click', event => {
   document.querySelector('#state').classList.add('connecting');
@@ -72,7 +70,7 @@ function onColorChanged(rgb) {
 }
 
 var img = new Image();
-img.src = '../color-wheel.png';
+img.src = 'color-wheel.png';
 img.onload = function() {
   var canvas = document.querySelector('canvas');
   var context = canvas.getContext('2d');
