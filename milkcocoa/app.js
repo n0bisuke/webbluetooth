@@ -3,20 +3,20 @@
 let milkcocoa = new MilkCocoa('dogi9jz8c16.mlkcca.com');
 let ds = milkcocoa.dataStore("dots");
 
-// document.querySelector('#connect').addEventListener('click', event => {
-//   document.querySelector('#state').classList.add('connecting');
-//   playbulbCandle.connect()
-//   .then(() => {
-//     console.log(playbulbCandle.device);
-//     document.querySelector('#state').classList.remove('connecting');
-//     document.querySelector('#state').classList.add('connected');
-//     return playbulbCandle.getDeviceName().then(handleDeviceName)
-//     .then(() => playbulbCandle.getBatteryLevel().then(handleBatteryLevel));
-//   })
-//   .catch(error => {
-//     console.error('Argh!', error);
-//   });
-// });
+document.querySelector('#connect').addEventListener('click', event => {
+  document.querySelector('#state').classList.add('connecting');
+  playbulbCandle.connect()
+  .then(() => {
+    console.log(playbulbCandle.device);
+    document.querySelector('#state').classList.remove('connecting');
+    document.querySelector('#state').classList.add('connected');
+    return playbulbCandle.getDeviceName().then(handleDeviceName)
+    .then(() => playbulbCandle.getBatteryLevel().then(handleBatteryLevel));
+  })
+  .catch(error => {
+    console.error('Argh!', error);
+  });
+});
 
 function hexToRGB(color){
   let r = parseInt(color.substr(1,2), 16);
