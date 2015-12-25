@@ -122,7 +122,7 @@ ds.on('push', (pushed) => {
   let g = rgb[1];
   let b = rgb[2];
   console.log(rgb);
-  playbulbCandle.setColor(206, 7, 27).then(onColorChanged);
+  playbulbCandle.setColor(r, g, b).then(onColorChanged);
 });
 
 function hexToRGB(color){
