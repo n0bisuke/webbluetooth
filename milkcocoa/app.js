@@ -26,8 +26,12 @@ function hexToRGB(color){
 }
 
 ds.on('push', (pushed) => {
-  // console.log(r,g,b);
-  playbulbCandle.setColor(hexToRGB(pushed.value.color)).then(onColorChanged);
+  let rgb = hexToRGB(pushed.value.color);
+  let r = rgb[0];
+  let g = rgb[1];
+  let b = rgb[2];
+  console.log(rgb);
+  playbulbCandle.setColor(r,g,b).then(onColorChanged);
 });
 
 // function changeColor(){
