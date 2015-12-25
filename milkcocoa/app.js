@@ -1,3 +1,5 @@
+'use strict'
+
 var milkcocoa = new MilkCocoa('dogi9jz8c16.mlkcca.com');
 var ds = milkcocoa.dataStore("dots");
 
