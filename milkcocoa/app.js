@@ -60,7 +60,9 @@ document.querySelector('#deviceName').addEventListener('input', event => {
   });
 });
 
-var r = g = b = 255;
+var r = 255;
+var g = 255;
+var b = 255;
 
 function onColorChanged(rgb) {
   if (rgb) {
