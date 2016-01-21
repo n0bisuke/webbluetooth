@@ -95,7 +95,11 @@
     _readCharacteristicValue(characteristicUuid) {
       let characteristic = this._characteristics.get(characteristicUuid);
       return characteristic.readValue()
-      .then(buffer => new DataView(buffer));
+      .then(buffer => {
+        // In Chrome 50+, a DataView is returned instead of an ArrayBuffer.
+        value = value.buffer ? value : new DataView(value);
+        return value;
+      });
     }
     _writeCharacteristicValue(characteristicUuid, value) {
       let characteristic = this._characteristics.get(characteristicUuid);
